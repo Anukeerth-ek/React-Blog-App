@@ -1,5 +1,5 @@
 {
-  "homepage": "https://anukeerth-ek.github.io/React-Blog-App/",
+  "homepage": "https://Anukeerth-ek.github.io/Blog-Web-App-React",
   "name": "my-project",
   "private": true,
   "version": "0.0.0",
@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

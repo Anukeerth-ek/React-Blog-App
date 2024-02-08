@@ -1,3 +1,9 @@
 [submodule "my_submodule"]
 	path = my_submodule
 	url = https://github.com/Anukeerth-ek/Blog-Web-App-React.git
+[submodule "path/to/submodule"]
+	path = path/to/submodule
+	url = https://github.com/Anukeerth-ek/Blog-Web-App-React.git
+[submodule "blog-app"]
+	path = blog-app
+	url = https://github.com/Anukeerth-ek/Blog-Web-App-React.git

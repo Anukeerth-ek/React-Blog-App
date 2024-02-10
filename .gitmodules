@@ -7,3 +7,6 @@
 [submodule "blog-app"]
 	path = blog-app
 	url = https://github.com/Anukeerth-ek/Blog-Web-App-React.git
+[submodule "Blog-App"]
+	path = Blog-App
+	url = https://github.com/Anukeerth-ek/Blog-Web-App-React.git

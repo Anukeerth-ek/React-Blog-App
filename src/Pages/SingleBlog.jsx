@@ -9,12 +9,12 @@ const SingleBlog = () => {
     console.log("data", data)
     const {title, image, category, author, published_date, reading_time, content} = data[0]
   return (
-    <div>
+    <div className="px-10 py-12">
       {/* BLOG DETAILS */}
       <div className='mx-w-7xl mx-auto my-12 flex flex-col md:flex-row gap-12'>
         <div className='lg:w-3/4 mx-auto'>
-            <div>
-                <img src={image} className='w-full mx-auto rounded'/>
+            <div className="w-12/12">
+                <img src={image} className='w-full mx-auto rounded '/>
             </div>
             <h2 className='text-3xl mt-8 font-bold mb-4 text-blue-500 cursor-pointer'>{title}</h2>
             <p className='mb-3 text-gray-600'><FaUser className='inline-flex item mr-2'/>{author} | {published_date}</p>

@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <App/>,
     children : [
      {
-       path: "/",
+       path: "/Blog-App-ReactJS",
        element: <Home/>,     
       },
       {
@@ -46,8 +46,22 @@ const router = createBrowserRouter([
       {
         path: "/blog/:id",
         element: <SingleBlog/>,
-        loader : ({params})=> fetch(`http://localhost:5000/blogs/${params.id}`)
-      }
+        loader: async ({ params }) => {
+          try {
+            const blogId = params.id;
+            const response = await fetch(`/Blog-App-ReactJS/modern-react-js-blog-starter-files/api/blogsData.json?id=${blogId}`);
+            if (!response.ok) {
+              throw new Error('Failed to fetch blog data');
+            }
+            const data = await response.json();
+            
+            return data;
+          } catch (error) {
+            console.error('Fetch Error:', error);
+            throw error;
+          }
+        },
+      },
     ]
   },
 ]);

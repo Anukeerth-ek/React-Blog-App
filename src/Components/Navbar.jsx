@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -16,7 +16,7 @@ const Navbar = () => {
      };
 
      const navItems = [
-          { path: "/", link: "Home" },
+          { path: "/Blog-App-ReactJS/", link: "Home" },
           { path: "/about", link: "About" },
           { path: "/blog", link: "Blog" },
           // { path: "/service", link: "Service" },
@@ -35,7 +35,7 @@ const Navbar = () => {
           <header className="bg-white fixed top-0 left-0 right-0 z-10" >
                <nav className="py-4 px-8 max-w7xl mx-auto flex justify-between items-center">
                     <a href="/" className="text-3xl text-blue-800">
-                         Geek<span className="text-blue-400">Glimpse</span>
+                        Native<span className="text-blue-400">Dev Diary</span>
                     </a>
 
                     {/* FOR LARGE DEVICES  */}
@@ -65,10 +65,10 @@ const Navbar = () => {
                               <FaGithub />
                          </a>
                          <a href="/" className="opacity-60 hover:opacity-100 text-2xl">
-                              <FaFacebook />
+                              <FaLinkedin />
                          </a>
                          <a href="/" className="opacity-60 hover:opacity-100 text-2xl ">
-                              <FaTwitter />
+                              <FaTwitter/>
                          </a>
                          <button className=" border-2 border-blue-400 px-14 py-2 bg-blue-100 hover:bg-blue-800 hover:text-white hover: font-medium ease-in duration-300 rounded-md ml-6">
                               Login

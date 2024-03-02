@@ -16,7 +16,7 @@ const Navbar = () => {
      };
 
      const navItems = [
-          { path: "/Blog-App-ReactJS/", link: "Home" },
+          { path: "/", link: "Home" },
           { path: "/about", link: "About" },
           { path: "/blog", link: "Blog" },
           // { path: "/service", link: "Service" },
@@ -35,7 +35,7 @@ const Navbar = () => {
           <header className="bg-white fixed top-0 left-0 right-0 z-10" >
                <nav className="py-4 px-8 max-w7xl mx-auto flex justify-between items-center">
                     <a href="/" className="text-3xl text-blue-800">
-                        Native<span className="text-blue-400">Dev Diary</span>
+                        Native<span className="text-blue-400">DevDiary</span>
                     </a>
 
                     {/* FOR LARGE DEVICES  */}

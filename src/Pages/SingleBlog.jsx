@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { FaClock, FaUser } from 'react-icons/fa';
+
 import SideBar from '../Components/SideBar';
 import { useLoaderData } from 'react-router-dom';
 

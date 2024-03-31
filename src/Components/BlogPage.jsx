@@ -19,7 +19,8 @@ const BlogPage = ({ type, color }) => {
           const fetchBlogs = async () => {
                setLoading(true);
                try {
-                    const apiUrl = "../dist/modern-react-js-blog-starter-files/api/blogsData.json"; 
+                    const apiUrl = "/modern-react-js-blog-starter-files/api/blogsData.json";
+
                     let url = `${apiUrl}?page=${currentPage}&limit=${pageSize}`;
                     if (selectedCategory) {
                          url += `&category=${selectedCategory}`;

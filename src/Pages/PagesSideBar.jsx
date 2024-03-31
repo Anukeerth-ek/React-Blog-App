@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
-const SideBar = () => {
+const PagesSideBar = () => {
      const [popularBlogs, setPopularBlogs] = useState([]);
      const [error, setError] = useState(null);
 
      useEffect(() => {
           async function fetchPopularBlogs() {
               try {
-                  const response = await fetch('/modern-react-js-blog-starter-files/api/blogsData.json');
+                const response = await fetch('/modern-react-js-blog-starter-files/api/blogsData.json');
+
                   if (!response.ok) {
                       throw new Error('Failed to fetch popular blogs');
                   }
@@ -61,4 +62,4 @@ const SideBar = () => {
      );
 };
 
-export default SideBar;
+export default PagesSideBar;

@@ -1,8 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { FaUser, FaClock } from "react-icons/fa";
 
-import SideBar from '../Components/SideBar';
 import { useLoaderData } from 'react-router-dom';
+import PagesSideBar from './PagesSideBar';
+import SideBar from '../Components/SideBar';
 
 const SingleBlog = () => {
   const { id } = useParams(); // Use useParams hook to get the id parameter from the URL
@@ -10,11 +12,11 @@ const SingleBlog = () => {
 
   // Check if data is an array
   if (!Array.isArray(data)) {
-    return <div>Error: Invalid data format</div>;
+    return <div>Error: Invalid data format anukeerth</div>;
   }
 
-  console.log("ID:", id);
-console.log("Data:", data);
+//   console.log("ID:", id);
+// console.log("Data:", data);
 
   // Find the blog post with the matching ID
   const blog = data.find(blog => String(blog.id) === id);
@@ -22,13 +24,13 @@ console.log("Data:", data);
   console.log("bdata is", blog)
   // Check if the blog post is found
   if (!blog) {
-    return <div>Error: Blog post not found for ID {id}</div>;
+    return <div>Error: Blog post not found for ID  {id}</div>;
   }
 
   // Destructure the blog post data
   const { title, image, category, author, published_date, reading_time, content } = blog;
   return (
-    <div className="px-14 py-12">
+    <div className="px-14 py-12 flex">
       {/* BLOG DETAILS */}
       <div className='mx-w-7xl mx-auto my-12 flex flex-col md:flex-row gap-12'>
         <div className='lg:w-3/4 mx-auto'>

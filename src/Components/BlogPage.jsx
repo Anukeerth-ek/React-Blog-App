@@ -55,7 +55,7 @@ const BlogPage = ({ type, color }) => {
 
      return (
           <>
-               <div className="py-20">
+               <div className="py-20 mt-8">
                     <div>
                          <CategorySelection
                               onSelectCategory={handleCategoryChange}

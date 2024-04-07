@@ -10,6 +10,9 @@ import Contact from "./Pages/Contact.jsx";
 import Service from "./Pages/Service.jsx";
 import Login from "./Pages/Login.jsx";
 import SingleBlog from "./Pages/SingleBlog.jsx";
+import SignUp from "./Pages/SignUp.jsx";
+import { Auth0Provider } from '@auth0/auth0-react';
+import Navbar from "./Components/Navbar.jsx";
 
 const router = createBrowserRouter([
      {
@@ -38,8 +41,13 @@ const router = createBrowserRouter([
                },
                {
                     path: "/login",
-                    element: <Login />,
+                    element: <Navbar />,
                },
+               {
+                    path: "/signup",
+                    element: <Navbar />,
+               },
+
                {
                     path: "/blog/:id",
                     element: <SingleBlog />,
@@ -67,7 +75,15 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-     <React.StrictMode>
+     // <React.StrictMode>
+<Auth0Provider
+    domain="dev-hxd16oc5q5mxkjx7.us.auth0.com"
+    clientId="dqVoiZo37UPxcxpAv7hnRuONPbRMiQci"
+    authorizationParams={{
+      redirect_uri: window.location.origin
+    }}
+  >
           <RouterProvider router={router} />
-     </React.StrictMode>
+          </Auth0Provider>
+     // </React.StrictMode>
 );

@@ -54,3 +54,44 @@
 .hide-item {
   display: none;
 }
+.login-container {
+  border: 1px solid rgba(128, 128, 128, 0.795);
+  text-align: center;
+  width: 450px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  
+  flex-direction: column;
+  margin: 140px auto;
+  padding: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.login-container h3 {
+  font-size: 45px;
+  margin: 10px 0 20px 0;
+}
+
+.login-wrapper input {
+ border: 0.5px solid rgba(128, 128, 128, 0.714);
+ margin-bottom: 16px;
+ width: 400px;
+ padding: 7px;
+ border-radius: 6px;
+}
+.login-btn {
+  background-color: blue;
+  width: 93%;
+  padding: 10px;
+  color: #fff;
+  font-size: 18px;
+  margin: 20px 0 10px 0;
+  border-radius: 10px;
+}
+span {
+  color: blue;
+}
+.or {
+  margin: 20px ;
+}

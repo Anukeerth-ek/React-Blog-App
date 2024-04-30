@@ -19,55 +19,53 @@ const BlogPage = ({ type, color }) => {
 
      // FUNCTION FOR INFINTE SCROLL
     
-     const handleInfiniteScroll = async(maxScrollSize)=> {
-          console.log("scrollHeight" + document.documentElement.scrollHeight)
-          console.log("innerHeight" + window.innerHeight)
-          console.log("scrollTop" + document.documentElement.scrollTop)
+     const handleInfiniteScroll = async () => {
           try {
-              if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight)
-              {
-                setPage((prev)=> prev + 1)
+              if (
+                  window.innerHeight + document.documentElement.scrollTop + 1 >=
+                  document.documentElement.scrollHeight
+              ) {
+                  setCurrentPage(prevPage => prevPage + 1);
               }
+          } catch (error) {
+              console.log("error", error);
           }
-          catch(error) {
-               console.log("error", error)
-          }
-     }
+      };
 
-     useEffect(() => {
+      useEffect(() => {
           const fetchBlogs = async () => {
                setLoading(true);
                try {
-                    const apiUrl = "/modern-react-js-blog-starter-files/api/blogsData.json";
-
-                    let url = `${apiUrl}?page=${currentPage}&limit=${pageSize} &page=${page}`;
-                    if (selectedCategory) {
-                         url += `&category=${selectedCategory}`;
-                    }
-                    const response = await fetch(url);
-                    if (!response.ok) {
-                         throw new Error("Failed to fetch blogs");
-                    }
-                    const data = await response.json();
-                    setBlogs((prev)=> [...prev, ...data]);
-                    setError(null); 
+                   const apiUrl = "/modern-react-js-blog-starter-files/api/blogsData.json";
+                   let url = `${apiUrl}?page=${currentPage}&limit=${pageSize}`;
+                   if (selectedCategory) {
+                       url += `&category=${selectedCategory}`;
+                   }
+                   const response = await fetch(url);
+                   if (!response.ok) {
+                       throw new Error("Failed to fetch blogs");
+                   }
+                   const data = await response.json();
+                   setBlogs(prevBlogs => [...prevBlogs, ...data]); // Append new data to the existing list
+                   setError(null);
                } catch (error) {
-                    setError(error);
-                    console.error("Error fetching blogs:", error);
+                   setError(error);
+                   console.error("Error fetching blogs:", error);
                } finally {
-                    setLoading(false);
+                   setLoading(false);
                }
-          };
-
+           };
+           
+           
+      
           fetchBlogs();
-     }, [currentPage, pageSize, selectedCategory, page]);
+      }, [currentPage, pageSize, selectedCategory]);
 
      // FOR INFINITE SCROLL
-     useEffect(()=> {
-          const maxScrollSize = 1268;
-          window.addEventListener('scroll', handleInfiniteScroll(maxScrollSize))
-          return ()=> window.removeEventListener("scroll", handleInfiniteScroll)
-     }, [])
+     useEffect(() => {
+          window.addEventListener("scroll", handleInfiniteScroll);
+          return () => window.removeEventListener("scroll", handleInfiniteScroll);
+      }, []);
 
      // FOR SHIMMER EFFECT
      const [isShimmering, setIsShimmering] = useState(true);

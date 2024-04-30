@@ -45,6 +45,13 @@ const Navbar = () => {
 
      const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
 
+
+     // LETS ADD NEW BLOG
+     
+     const handleAddNewBlog = ()=> {
+       navigate("/newblog")
+     }
+
      return (
           <header className={`bg-white fixed top-0 left-0 right-0 z-10 border-b-1 ${isSmallScreen ? "border-b-2" : ""}`}>
                <nav className="py-4 px-8 max-w7xl mx-auto flex justify-between items-center">
@@ -91,23 +98,21 @@ const Navbar = () => {
                     {/* MENU ICONS */}
                     <div className="lg:flex gap-4 items-center hidden">
                          {/* IMPLEMENTING NEW POST HERE */}
-                         <div className="flex items-center">
-                              <HiOutlinePencilSquare className="text-lg " />
-                              <h3 className="text-lg">Write</h3>
+                         <div className="flex justify-center items-center cursor-pointer text-gray-500  hover:text-gray-800 " onClick={()=> handleAddNewBlog()}>
+                              <HiOutlinePencilSquare className="text-[25px]  leading-4 " />
+                              <h3 className="text-md ml-1 font-medium">Write</h3>
                          </div>
 
                          {isAuthenticated ? (
-                            <>
-                              <button
-                                   onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-                                   className=" border-2 border-blue-400 px-14 py-2 bg-blue-100 hover:bg-blue-800 hover:text-white hover: font-medium ease-in duration-300 rounded-md ml-6"
-                              >
-                                   Log Out
-                              </button>
-                              <p>Hi,{user.given_name}</p>
-                            
-                            </>
-                             
+                              <>
+                                   <button
+                                        onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+                                        className=" border-2 border-blue-400 px-14 py-2 bg-blue-100 hover:bg-blue-800 hover:text-white hover: font-medium ease-in duration-300 rounded-md ml-6"
+                                   >
+                                        Log Out
+                                   </button>
+                                   <p>Hi,{user.name}</p>
+                              </>
                          ) : (
                               <button
                                    onClick={() => loginWithRedirect()}
@@ -130,11 +135,11 @@ const Navbar = () => {
                     {/* <Model isOpen = {isModelOpen} onClose={closeModel}/> */}
 
                     {/* FOR MOBILE DEVICES */}
-                    <div className="md:hidden z-15">
+                    {/* <div className="md:hidden z-15">
                          <button onClick={toggleMenu}>
                               {isMenuOpen ? <RxCross1 /> : <RxHamburgerMenu className=" w-5 h-6 " />}
                          </button>
-                    </div>
+                    </div> */}
                </nav>
                {/* MENU FOR MOBILE SCREEN */}
                <ul

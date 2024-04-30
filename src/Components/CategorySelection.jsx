@@ -5,7 +5,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 const CategorySelection = ({ onSelectCategory, activeCategory }) => {
   const Categories = [
     "Front End",
-    "ReactJS",
+    "React JS",
     "React Native",
     "JavaScript",
     "Development Tools",
@@ -13,6 +13,7 @@ const CategorySelection = ({ onSelectCategory, activeCategory }) => {
     "Security",
     "AI",
     "Apps",
+   
   ];
 
   const containerRef = useRef(null);

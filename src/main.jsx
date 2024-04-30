@@ -10,6 +10,7 @@ import Contact from "./Pages/Contact.jsx";
 import Service from "./Pages/Service.jsx";
 import Login from "./Pages/Login.jsx";
 import SingleBlog from "./Pages/SingleBlog.jsx";
+import{ NewStory} from "./Pages/NewStory.jsx";
 import SignUp from "./Pages/SignUp.jsx";
 import { Auth0Provider } from '@auth0/auth0-react';
 import Navbar from "./Components/Navbar.jsx";
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
                {
                     path: "/signup",
                     element: <Navbar />,
+               },
+               {
+                    path: "/newblog",
+                    element: <NewStory />,
                },
 
                {

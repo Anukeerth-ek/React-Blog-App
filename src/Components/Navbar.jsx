@@ -47,7 +47,7 @@ const Navbar = () => {
      };
 
      const { loginWithRedirect, logout, isAuthenticated, user, nickname } = useAuth0();
-     console.log("this is user", user)
+
 
 
      // LETS ADD NEW BLOG
@@ -75,6 +75,14 @@ const Navbar = () => {
           setShowDashboard(!showDashboard);
         };
 
+     //    OBFUSCATE EMAIL
+     const obfuscateEmail = (email) => {
+          const [user, domain] = email.split("@");
+          const numAsterisks = Math.max(user.length - 2, 3);
+          console.log("user", numAsterisks)
+          const obfuscatedUser = user.slice(0, 2) + "*".repeat(numAsterisks);
+          return `${obfuscatedUser}@${domain}`;
+      };
      return (
           <header className={`bg-white fixed top-0 left-0 right-0 z-10 border-b-1 ${isSmallScreen ? "border-b-2" : ""}`}>
                <nav className="py-4 px-8 max-w7xl mx-auto flex justify-between items-center">
@@ -182,7 +190,7 @@ const Navbar = () => {
                     ))}
                </ul>
                <div className="absolute right-5 md:right-10 transition-opacity duration-500">
-               {showDashboard && <UserDashboard/>}
+               {showDashboard && <UserDashboard user={obfuscateEmail(user.name)} />}
                </div>
           </header>
      );

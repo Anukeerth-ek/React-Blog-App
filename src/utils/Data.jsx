@@ -5,7 +5,7 @@ import { IoStatsChartOutline } from "react-icons/io5";
 
 
 export const userDashboardProfile = [
-    [{
+    {
       id: 0,
       icon: CiUser,
       info: "Profile",
@@ -24,21 +24,43 @@ export const userDashboardProfile = [
       id: 3,
       icon: IoStatsChartOutline,
       info: "Stats",
-    },],
-    [
-        {
-            content: "setting"
-        },
-        {
-            content: "Refine Recommendation"
-        },
-        {
-            content: "Manage publications"
-        },
-        {
-            content: "Help"
-        }
-    ]
+    }
   ];
 
+export const settingOptions = [
+    {
+        content: "Settings"
+    },
+    {
+        content: "Refine Recommendations"
+    },
+    {
+        content: "Manage Publications"
+    },
+    {
+        content: "Help"
+    },
+]
 
+export const userMemberShips = [
+    {
+        content: "Become a NativeDev member",
+        icon: true,
+    },
+    {
+        content: "Create a mastodon account",
+        icon: false,
+    },
+    {
+        content: "Apply for author verification",
+        icon: false,
+    },
+    {
+        content: "Apply for partner program",
+        icon: false,
+    },
+    {
+        content: "Gift a membership",
+        icon: false,
+    },
+]

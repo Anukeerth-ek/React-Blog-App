@@ -9,11 +9,14 @@ import Model from "./Model";
 import { IoIosSearch } from "react-icons/io";
 import { HiOutlinePencilSquare } from "react-icons/hi2";
 import { useMediaQuery } from "react-responsive";
-import { useAuth0 } from "@auth0/auth0-react";
+import { User, useAuth0 } from "@auth0/auth0-react";
+import UserDashboard from "./UserDashboard";
+import { useEffect } from "react";
 
 const Navbar = () => {
      const [isMenuOpen, setIsMenuOpen] = useState(false);
      const [isModelOpen, setIsModelOpen] = useState(false);
+     const [showDashboard, setShowDashboard] = useState(false)
 
      // FOR SMALL SCREENS
      const isSmallScreen = useMediaQuery({ query: "(max-width: 640px)" });
@@ -43,7 +46,7 @@ const Navbar = () => {
           navigate("/login");
      };
 
-     const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
+     const { loginWithRedirect, logout, isAuthenticated, user, nickname } = useAuth0();
      console.log("this is user", user)
 
 
@@ -52,6 +55,25 @@ const Navbar = () => {
      const handleAddNewBlog = ()=> {
        navigate("/blogs/add")
      }
+
+     // Implement userdashboard
+     useEffect(() => {
+          const handleScroll = () => {
+            setShowDashboard(false);
+          };
+      
+          window.addEventListener("scroll", handleScroll);
+      
+          return () => {
+            window.removeEventListener("scroll", handleScroll);
+          };
+        }, []);
+      
+    
+      
+        const showUserDashboard = () => {
+          setShowDashboard(!showDashboard);
+        };
 
      return (
           <header className={`bg-white fixed top-0 left-0 right-0 z-10 border-b-1 ${isSmallScreen ? "border-b-2" : ""}`}>
@@ -108,16 +130,18 @@ const Navbar = () => {
                               <>
                                    <button
                                         onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-                                        className=" border-2 border-blue-400 px-14 py-2 bg-blue-100 hover:bg-blue-800 hover:text-white hover: font-medium ease-in duration-300 rounded-md ml-6"
+                                        className=" border-2 border-blue-400 px-9 py-2 bg-blue-100 hover:bg-blue-800 hover:text-white hover: font-medium ease-in duration-300 rounded-md ml-6"
                                    >
                                         Log Out
                                    </button>
-                                   <p>Hi,{user.name}</p>
+                                 <div className="cursor-pointer " onClick={showUserDashboard}>
+                                 <img src={user.picture} className="w-[33px] rounded-2xl"/>
+                                 </div>
                               </>
                          ) : (
                               <button
                                    onClick={() => loginWithRedirect()}
-                                   className=" border-2 border-blue-400 px-14 py-2 bg-blue-100 hover:bg-blue-800 hover:text-white hover: font-medium ease-in duration-300 rounded-md ml-6"
+                                   className=" border-2 border-blue-400 px-9 py-2 bg-blue-100 hover:bg-blue-800 hover:text-white hover: font-medium ease-in duration-300 rounded-md ml-6"
                               >
                                    Login
                               </button>
@@ -157,6 +181,9 @@ const Navbar = () => {
                          </li>
                     ))}
                </ul>
+               <div className="absolute right-5 md:right-10 transition-opacity duration-500">
+               {showDashboard && <UserDashboard/>}
+               </div>
           </header>
      );
 };

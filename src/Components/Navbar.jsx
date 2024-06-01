@@ -44,12 +44,13 @@ const Navbar = () => {
      };
 
      const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
+     console.log("this is user", user)
 
 
      // LETS ADD NEW BLOG
      
      const handleAddNewBlog = ()=> {
-       navigate("/newblog")
+       navigate("/blogs/add")
      }
 
      return (

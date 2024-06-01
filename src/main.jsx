@@ -49,7 +49,7 @@ const router = createBrowserRouter([
                     element: <Navbar />,
                },
                {
-                    path: "/newblog",
+                    path: "/blogs/add",
                     element: <NewStory />,
                },
 

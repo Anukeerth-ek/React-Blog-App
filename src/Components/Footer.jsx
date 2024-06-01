@@ -19,32 +19,32 @@ const Footer = () => {
                               </div>
                               {/* SECOND CATEGORY*/}
                               <div>
-                                   <p className="font-medium tracking-wide text-gray-300">Section</p>
+                                   <p className="font-medium tracking-wide text-gray-300">About US</p>
                                    <ul className="mt-2 space-y-2">
-                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Contact us</a></li>
-                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Be a affiliate</a></li>
-                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Trending</a></li>
+                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">HQ: 838 Broadway, New York, NY 10003, USA</a></li>
+                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">EMEA:22 Washington Square USA</a></li>
+                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700"></a></li>
                                     <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Help</a></li>
                                    </ul>
                               </div>
                                  {/* THIRD CATEGORY*/}
                               <div>
-                                   <p className="font-medium tracking-wide text-gray-300">Section3</p>
+                                   <p className="font-medium tracking-wide text-gray-300">Quick Links</p>
                                    <ul className="mt-2 space-y-2">
-                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Contact us</a></li>
-                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Be a affiliate</a></li>
-                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Trending</a></li>
-                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Help</a></li>
+                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">About us</a></li>
+                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Why NativeDevDiary</a></li>
+                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Legal</a></li>
+                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Blogs</a></li>
                                    </ul>
                               </div>
                                  {/* FOURTH CATEGORY*/}
                               <div>
-                                   <p className="font-medium tracking-wide text-gray-300">Section4</p>
+                                   <p className="font-medium tracking-wide text-gray-300">Work With US</p>
                                    <ul className="mt-2 space-y-2">
-                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Contact us</a></li>
-                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Be a affiliate</a></li>
-                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Trending</a></li>
-                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Help</a></li>
+                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">Product</a></li>
+                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">NativeDevDiary Consultancy</a></li>
+                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">E-learingDiary</a></li>
+                                    <li><a href="/" className="text-gray-500 transition-colors duration-300 hover:to-blue-700">NativeBusinesses</a></li>
                                    </ul>
                               </div>
                                  {/* SUBSCRIPTION CATEGORY*/}
@@ -54,7 +54,7 @@ const Footer = () => {
                                         <input type="email" name="email" id="email" className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm aspect-auto md:mr-2 mb:mb-0 focus:border-purple-400 focus:ouline-none"/>
                                         <button type="submit" className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition-duration-200 rounded shadow-md hover:bg-blue-800 focus:outline-none border">Subscribe</button>
                                     </form>
-                                    <p className="mt-6 text-sm text-gray-500">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, libero alias sint corrupti totam ab mollitia suscipit modi autem aspernatur nihil. Nemo totam, nisi reprehenderit repellat aspernatur quo veniam exercitationem nam magni!</p>
+                                    <p className="mt-6 text-sm text-gray-500">Welcome to our blog app! Dive into a world where we explore the latest trends and insights in frontend development, AI, security, apps, and developer tools. Stay updated with informative articles, tutorials, and discussions crafted to inspire and empower both seasoned developers and enthusiasts alike. Join us on this journey of discovery, learning, and innovation as we navigate the ever-evolving landscape of technology together.</p>
                               </div>
                             
                          </div>

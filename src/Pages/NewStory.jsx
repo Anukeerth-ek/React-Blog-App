@@ -1,82 +1,60 @@
 import React, { useState } from "react";
-// import { firestore } from "../firebase";
-// import firebase from "firebase/app";
-// import "firebase/firestore";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+
+const modules = {
+     toolbar: [
+          [{ header: "1" }, { header: "2" }, { font: [] }],
+          [{ size: [] }],
+          ["bold", "italic", "underline", "strike", "blockquote"],
+          [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }],
+          ["link", "image", "video"],
+          ["clean"],
+     ],
+};
+
+const formats = [
+     "header",
+     "font",
+     "size",
+     "bold",
+     "italic",
+     "underline",
+     "strike",
+     "blockquote",
+     "list",
+     "bullet",
+     "indent",
+     "link",
+     "image",
+     "video",
+];
 
 export const NewStory = () => {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [selectedTopics, setSelectedTopics] = useState([]);
+     const [value, setValue] = useState("");
 
-  const handleAddBlog = () => {
-    firestore
-      .collection("blogs")
-      .add({
-        title: title,
-        content: content,
-        topics: selectedTopics,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      })
-      .then(() => {
-        console.log("Blog added successfully");
-        // Reset input fields after successful submission
-        setTitle("");
-        setContent("");
-        setSelectedTopics([]);
-      })
-      .catch((error) => {
-        console.error("Error adding blog: ", error);
-      });
-  };
+     const handleChange = (content) => {
+          setValue(content);
+     };
 
-  const handleTopicSelect = (e) => {
-    const options = e.target.options;
-    const selectedValues = [];
-    for (let i = 0; i < options.length; i++) {
-      if (options[i].selected) {
-        selectedValues.push(options[i].value);
-      }
-    }
-    setSelectedTopics(selectedValues);
-  };
+     // NewStory.jsx
 
-  return (
-    <div className="mt-64 mx-6 flex items-center justify-center flex-column">
-      <div className="flex flex-col relative bottom-[130px]">
-        <input
-          type="text"
-          placeholder="Title"
-          className="text-6xl"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <textarea
-          placeholder="Write your blog..."
-          className="text-2xl"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
-        <p>Add or change topics (up to 2) so readers know what your story is about</p>
-        <select
-          name="topics"
-          id="topic-select"
-          multiple
-          size="5"
-          value={selectedTopics}
-          onChange={handleTopicSelect}
-        >
-          <option value="Front End">Front End</option>
-          <option value="ReactJS">ReactJS</option>
-          <option value="React Native">React Native</option>
-          <option value="JavaScript">JavaScript</option>
-          <option value="Development Tools">Development Tools</option>
-          <option value="Startups">Startups</option>
-          <option value="Security">Security</option>
-          <option value="AI">AI</option>
-          <option value="Apps">Apps</option>
-        </select>
-        <button onClick={handleAddBlog}>Add Blog</button>
-      </div>
-    </div>
-  );
+     return (
+          <div className=" mx-60 mt-40">
+               <div>
+                    <ReactQuill
+                         value={value}
+                         onChange={handleChange}
+                         modules={modules}
+                         formats={formats}
+                         className=" h-64"
+                    />
+               </div>
+               <div className="text-center my-14">
+                    <button className="border-2 border-blue-400 px-14 py-2 bg-blue-100 hover:bg-blue-800 hover:text-white hover: font-medium ease-in duration-300 rounded-md ml-6">
+                         Add Blog
+                    </button>
+               </div>
+          </div>
+     );
 };

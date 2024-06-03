@@ -43,7 +43,7 @@ const SideBar = () => {
             <div>
                 {popularBlogs.map((blog) => (
                     <Link to={`/blog/${blog.id}`} key={blog.id} className="">
-                        <div className="my-5 border-b-2 border-spacing-2 px-4">
+                        <div className="my-5 border-b-2 border-spacing-2 px-4 pb-1">
                             <div className="flex items-center">
                                 <img
                                     src={blog.authorPic ? "https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?size=626&ext=jpg" : ''}

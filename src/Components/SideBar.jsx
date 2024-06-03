@@ -6,6 +6,8 @@ const SideBar = () => {
      const [popularBlogs, setPopularBlogs] = useState([]);
      const [error, setError] = useState(null);
 
+     console.log("pblogs")
+      
      useEffect(() => {
           async function fetchPopularBlogs() {
               try {
@@ -34,6 +36,7 @@ const SideBar = () => {
                     {popularBlogs.map((blog) => (
                          <div key={blog.id} className="my-5 border-b-2 border-spacing-2 px-4">
                               <h4 className="font-semibold mb-1">{blog.title}</h4>
+                              
                               <Link to={`/blog/${blog.id}`} className="font-normal pb-2 hover:text-blue-600 inline-flex items-center py-1 ">
                                    Read more
                                    <FaRegArrowAltCircleRight className="ml-1" />

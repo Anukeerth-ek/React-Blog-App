@@ -106,7 +106,7 @@ const BlogPage = ({ type, color }) => {
                                         activeCategory={activeCategory}
                                    />
                               </div>
-                              <div className="flex flex-col lg:flex-row gap-12">
+                              <div className="flex flex-col lg:flex-row gap-4">
                                    {loading ? (
                                         <ReactLoading type={type} color={color} height={"20%"} width={"20%"} />
                                    ) : (
@@ -117,7 +117,7 @@ const BlogPage = ({ type, color }) => {
                                                   selectedCategory={selectedCategory}
                                                   pageSize={pageSize}
                                              />
-                                             <div>
+                                             <div className="ml-3">
                                                   <SideBar />
                                              </div>
                                         </>

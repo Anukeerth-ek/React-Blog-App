@@ -74,7 +74,7 @@ const BlogPage = ({ type, color }) => {
      useEffect(() => {
           const shimmerTimeout = setTimeout(() => {
                setIsShimmering(false);
-          }, 1500);
+          }, 700);
 
           return () => {
                clearTimeout(shimmerTimeout); // Clear the timeout if component unmounts or if dependency changes
@@ -106,7 +106,7 @@ const BlogPage = ({ type, color }) => {
                                         activeCategory={activeCategory}
                                    />
                               </div>
-                              <div className="flex flex-col lg:flex-row gap-4">
+                              <div className="flex flex-col lg:flex-row gap-1">
                                    {loading ? (
                                         <ReactLoading type={type} color={color} height={"20%"} width={"20%"} />
                                    ) : (
@@ -117,7 +117,7 @@ const BlogPage = ({ type, color }) => {
                                                   selectedCategory={selectedCategory}
                                                   pageSize={pageSize}
                                              />
-                                             <div className="ml-3">
+                                             <div className="ml-1">
                                                   <SideBar />
                                              </div>
                                         </>

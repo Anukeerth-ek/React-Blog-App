@@ -49,10 +49,10 @@ const CategorySelection = ({ onSelectCategory, activeCategory }) => {
   };
 
   return (
-    <div className="relative px-4">
+    <div className="relative mx-3 md:mx-0">
       <div
         ref={containerRef}
-        className={`md:px-4 mb-8 lg:space-x-12 flex flex-wrap items-center border-b-2 py-5 font-medium ${isSmallScreen ? "py-2 flex-col max-h-[1px] overflow-x-auto" : ""
+        className={`md:px-1 md:mb-6 lg:space-x-12 flex flex-wrap  items-center border-b-2 py-5 font-medium ${isSmallScreen ? "py-2 flex-col max-h-[1px] overflow-x-auto" : ""
         }`}
       >
         {showLeftArrow && isSmallScreen && (

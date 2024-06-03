@@ -2,6 +2,7 @@
 
 ![Screenshot 2024-06-04 003411](https://github.com/Anukeerth-ek/react-blog-app/assets/152538146/0d64ca34-c8d3-4791-9e3a-ebf1a91b89e7)
 
+![Screenshot 2024-06-04 003817](https://github.com/Anukeerth-ek/react-blog-app/assets/152538146/9f670f83-786d-4dc1-8619-17fc8ee1c72f)
 
 
 ![Screenshot 2024-06-04 003434](https://github.com/Anukeerth-ek/react-blog-app/assets/152538146/6af53773-9fe1-4405-bc44-bc825366ae41)

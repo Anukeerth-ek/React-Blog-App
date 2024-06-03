@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-# React + Vite
+
+![Screenshot 2024-06-04 003434](https://github.com/Anukeerth-ek/react-blog-app/assets/152538146/6af53773-9fe1-4405-bc44-bc825366ae41)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
